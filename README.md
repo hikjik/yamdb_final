@@ -1,3 +1,5 @@
+[![Yamdb Workflow](https://github.com/hikjik/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
+
 # YaMDb REST API
 
 ## Описание
