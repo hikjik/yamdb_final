@@ -2,6 +2,10 @@
 
 # YaMDb REST API
 
+## Документация
+
+Документация проекта: [https://hikjik.hopto.org/redoc](https://hikjik.hopto.org/redoc)
+
 ## Описание
 
 Проект реализует REST API для сервиса YaMDb — базы отзывов о различных произведениях (фильмах, книгах, музыке и др.). API предоставляет следующие возможности:
@@ -74,10 +78,6 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 docker-compose run web python manage.py loaddata fixtures.json
 ```
-
-## Документация
-
-После запуска проекта документация доступна по [ссылке.](http://127.0.0.1/redoc)
 
 ## Примеры запросов к API
 
