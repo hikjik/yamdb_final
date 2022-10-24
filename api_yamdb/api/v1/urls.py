@@ -1,8 +1,7 @@
 from rest_framework.routers import DefaultRouter
 
-from .views import (AuthViewSet, CategoryViewSet, CommentViewSet,
-                    GenreViewSet, ReviewViewSet, TitleViewSet,
-                    UserViewSet)
+from .views import (AuthViewSet, CategoryViewSet, CommentViewSet, GenreViewSet,
+                    ReviewViewSet, TitleViewSet, UserViewSet)
 
 v1_router = DefaultRouter()
 v1_router.register("auth", AuthViewSet)

@@ -1,9 +1,16 @@
+from api.v1.filters import TitleFilters
+from api.v1.permissions import (IsAdmin, IsAdminOrModeratorOrAuthorOrReadOnly,
+                                IsReadOnly)
+from api.v1.serializers import (CategorySerializer, CommentSerializer,
+                                GenreSerializer, ReviewSerializer,
+                                SignInSerializer, SignUpSerializer,
+                                TitleReadOnlySerializer, TitleSerializer,
+                                UserSerializer)
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
@@ -15,17 +22,9 @@ from rest_framework.permissions import (AllowAny, IsAuthenticated,
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework_simplejwt.tokens import AccessToken
-
-from api.v1.filters import TitleFilters
-from api.v1.permissions import (IsAdmin, IsAdminOrModeratorOrAuthorOrReadOnly,
-                                IsReadOnly)
-from api.v1.serializers import (CategorySerializer, CommentSerializer,
-                                GenreSerializer, ReviewSerializer,
-                                SignInSerializer, SignUpSerializer,
-                                TitleReadOnlySerializer, TitleSerializer,
-                                UserSerializer)
-from api_yamdb.settings import EMAIL_FROM
 from reviews.models import Category, Genre, Review, Title, User
+
+from api_yamdb.settings import EMAIL_FROM
 
 
 class AuthViewSet(GenericViewSet):

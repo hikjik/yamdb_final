@@ -3,10 +3,8 @@ import os
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
-
 from reviews.models import Category, Comment, Genre, GenreTitle, Review, Title
 from users.models import User
-
 
 TABLES = {
     User: "users.csv",
@@ -32,5 +30,5 @@ class Command(BaseCommand):
 
     @staticmethod
     def _fix_names(dct):
-        NAMES = {"author", "category", "title", "review"}
-        return {f"{k}_id" if k in NAMES else k: v for k, v in dct.items()}
+        names = {"author", "category", "title", "review"}
+        return {f"{k}_id" if k in names else k: v for k, v in dct.items()}
